@@ -17,4 +17,4 @@
 
 ##### A note about speed
 # This program runs very quickly, but I wanted the user to be able to watch the
-# solving process. Comment out line 163 to watch it run at full speed!
+# solving process. Comment out line 164 to watch it run at full speed!

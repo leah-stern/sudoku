@@ -8,6 +8,7 @@
 import copy
 import sys
 import time
+import argparse
 
 # Functions to print in color. I found these in GeeksforGeeks article "Print
 # Colors in Python terminal." 
@@ -189,12 +190,16 @@ def printCurrentStage(puzzle, index, digit):
 
 # Main!
 def main():
+	# Argparse for CLI
+	parser = argparse.ArgumentParser(description='Which puzzle should I solve?')
+	parser.add_argument('puzzle', help='Use the name of the puzzle.')
+	args = parser.parse_args()
+
+	# Evaluate input string
+	puzzle = eval(args.puzzle)
+
 	# Clear the terminal just to look pretty!
 	print("\033[H\033[J", end="")
-
-	# Get name of puzzle from user
-	puzzle = eval(input("What puzzle should I solve? "))
-	type(puzzle)
 
 	# Check whether puzzle can be solved
 	if not startSolving(puzzle):
